@@ -1,8 +1,10 @@
+import pytest
 from pages.home_page import HomePage
 
+@pytest.mark.smoke
 def test_homepage_title(page):
     """
-    Test to verify homepage title contains 'The Internet'.
+    Smoke test to verify homepage title contains 'The Internet'.
     """
     home = HomePage(page)
 
@@ -11,7 +13,6 @@ def test_homepage_title(page):
 
     # Get page title
     title = home.get_homepage_title()
-
     print("Page Title:", title)  # Optional debug output
 
     # Assertion to verify title contains expected text
