@@ -45,6 +45,8 @@ def test_invalid_login(page):
 
     logger.info("Logging in with invalid credentials")
     login.login("wronguser", "wrongpass")
+    # login.login("tomsmith", "SuperSecretPassword!")
+
 
     flash_message = login.get_flash_message()
     logger.info(f"Flash message: {flash_message}")
