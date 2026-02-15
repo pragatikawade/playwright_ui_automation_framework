@@ -1,0 +1,18 @@
+# Virtual env
+play_env/
+
+# IDE files
+.idea/
+.vscode/
+
+# Reports
+#reports/
+#*.log
+#*.html
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
