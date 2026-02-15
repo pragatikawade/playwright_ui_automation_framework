@@ -1,5 +1,8 @@
 import pytest
 from pages.home_page import HomePage
+from utils.loggers import get_logger
+
+logger = get_logger()  # Initialize logger
 
 @pytest.mark.smoke
 def test_homepage_title(page):
@@ -8,15 +11,14 @@ def test_homepage_title(page):
     """
     home = HomePage(page)
 
-    # Open homepage
+    logger.info("Opening homepage")
     home.open_homepage()
 
-    # Get page title
     title = home.get_homepage_title()
-    print("Page Title:", title)  # Optional debug output
+    logger.info(f"Homepage title: {title}")
 
-    # Assertion to verify title contains expected text
     assert "The Internet" in title
+    logger.info("Homepage title verified successfully")
 
 
 def test_navigate_to_login(page):
@@ -25,11 +27,11 @@ def test_navigate_to_login(page):
     """
     home = HomePage(page)
 
-    # Open homepage
+    logger.info("Opening homepage")
     home.open_homepage()
 
-    # Click the Form Authentication link
+    logger.info("Clicking Form Authentication link")
     home.click_form_authentication()
 
-    # Assert that URL now contains /login
     assert "/login" in page.url
+    logger.info("Navigation to login page verified successfully")
