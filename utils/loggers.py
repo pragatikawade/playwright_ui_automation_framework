@@ -6,10 +6,7 @@ if not os.path.exists("reports"):
     os.makedirs("reports")
 
 def get_logger(name="TestLogger"):
-    """
-    Creates and returns a logger instance.
-    Logs are written to both console and file.
-    """
+    """Creates and returns a logger instance.Logs are written to both console and file."""
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
 
